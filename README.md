@@ -1,5 +1,6 @@
 # quera_mine_problem
 
+My solution for object detection problem of quera mine competion.
 
 
 <center>
