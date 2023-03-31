@@ -6,16 +6,16 @@
 
 <h1 align="center">Quera Mine Competition</h1>
 
-<div align="center">
+<!-- <div align="center"> -->
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+<!-- [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE) -->
 
-</div>
+<!-- </div> -->
 
----
+<!-- --- -->
 
 <p align="center"> My solution for the object detection problem of the Quera Mine Competition
     <br> 
@@ -35,7 +35,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-The competition is about calculating the length of rocks in a  mineral exploration process. 
+The competition revolves around the calculation of rock lengths in a mineral exploration process. You can find the competition information in the table below.
 
 <div align="center">
 
@@ -44,12 +44,11 @@ The competition is about calculating the length of rocks in a  mineral explorati
  [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
 </div>
 
-There is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
-Below is the description of the contest organizer about the dataset and metric:
+A [notebook](notebooks/notebook.ipynb) file is available for use on Google Colab. Below is the description of the contest organizer regarding the dataset and metric:
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-Each picture box has rock pieces (labeled if it is larger than 10 cm) and wood pieces. For example, in the figure below, only one example of each type of labeled object is shown using white rectangles.
+Each box picture contains rock pieces that are labeled if they are larger than 10 cm and wood pieces. For instance, the figure below shows only one example of each type of labeled object using white rectangles.
 
 <img
   src="docs\box-annotations.jpg"
@@ -57,7 +56,7 @@ Each picture box has rock pieces (labeled if it is larger than 10 cm) and wood p
   title="labeled objects"
   style="display:block; float:none; margin-left:auto; margin-right:auto; max-width: 700px">
 
-Also, in the figure below, the given parameters for an identified object are shown:
+Furthermore, the figure below displays the given parameters for an identified object:
 
 <img
   src="docs\object-dims.jpg"
@@ -65,7 +64,7 @@ Also, in the figure below, the given parameters for an identified object are sho
   title="object-dims"
   style="display:block; float:none; margin-left:auto; margin-right:auto; max-width: 400px">
 
-These objects for the photos in the train folder are labeled for you in the label.xlsx file with the following specifications:
+The objects (woods and rocks) in the samples in the train folder are labeled for you in the label.xlsx file with the following specifications:
 
 <div align="center">
 
@@ -81,7 +80,7 @@ image_width   | Image width in pixels
 image_height   | Image height in pixels 
 </div>
 
-Each Run is separated by woods placed vertically in the core box.<br />
+Each run is separated by a vertical wood pieces placed in the core box.<br />
 
 The Rock Quality Designation, abbreviated as RQD, is an approximate measure to determine the number of fractures in the rock mass. This "percentage criterion" is calculated as follows for each Run:<br />
 
@@ -92,7 +91,7 @@ The Rock Quality Designation, abbreviated as RQD, is an approximate measure to d
   style="display:block; float:none; margin-left:auto; margin-right:auto; max-width: 700px">
 
 
-For example, in the figure below for the first Run of this box, there are only two stones larger than 10 cm that are marked in the figure (the first row of cores), and the wood marking the end of the Run is also shown. Run number one starts from the first row of the box (left side) and continues to the first stick of the same row. Given that the length of this run is 2.5 meters and the total length of the labeled stones is 0.2 meters. Its RQD value is 8% according to the following calculations:
+For instance, in the first run of this box, there are only two rocks larger than 10 cm that are marked in the figure (the first row of cores), and the wood marking the end of the run is also shown. Run number one starts from the first row of the box (left side) and continues to the first wood of the same row. Given that the length of this run is 2.5 meters and the total length of the labeled rocks is 0.2 meters, its RQD value is 8% according to the following calculations:
 
 <div align="center">
 
@@ -105,7 +104,7 @@ $$ RQD=100\times \tfrac{0.2}{2.5}=8\\% $$
   title="rqd-example"
   style="display:block; float:none; margin-left:auto; margin-right:auto; max-width: 700px">
 
-According to Chapter 8 of Mineral Exploration Book, the RQD group for a Run is calculated according to the following table:
+As per Chapter 8 of the [Mineral Exploration Book](https://www.elsevier.com/books/mineral-exploration/haldar/978-0-12-814022-2), the RQD group for a run is calculated according to the following table:
 
 <div align="center">
 
@@ -118,16 +117,13 @@ RQD percent range | class
 [90,100)   | 5 
 </div>
 
-For example, for the Run described above that had an RQD value of 8, the RQD group would be set to 1.
-
-The length (x-axis) of boxe of cores in all photos is 1.1 meters.
-All the woods are colored purple in order to simplify this match, and you can assume that if you are given a new photo to identify the RQD, the sticks must have been colored purple by someone.
+For instance, for the run described above that had an RQD value of 8%, the RQD group would be set to 1.<br />
+The length of the box of cores in all photos is 1.1 meters along the x-axis. All the woods are colored purple to simplify the image. You can assume that if you are given a new image to identify the RQD, the woods must have been colored purple by someone.
 
 ## 🏁 Dataset <a name = "dataset"></a>
 
-For this question, the training data is in the train folder and the test data is in the test-rqd folder. You have access to both of these folders in the new job step data.
-
-You should read the length of a Run from test-rqd data from the from-to-rqd.xlsx file and then calculate the RQD group of that Run. This Excel file has the following specifications:
+The training dataset is located in the train folder, and the test dataset is located in the test-rqd folder.
+You should read the depth of a run for the test dataset from the from-to-rqd.xlsx file and then calculate the RQD group of that run. This Excel file has the following specifications:
 
 <div align="center">
 
@@ -138,33 +134,33 @@ From	  | the From value of that Run in meters
 To	  |  The To value of that Run in meters
 </div>
 
-A RunId is defined based on the structure "Run Number-Photo Number-Specific Name-Miner Name". Note that the "Photo number" for each borehole starts from 1 and also the "Run number" for each photo starts from 1. 
-
-For example, a RunId can be M3-BH130-1-3, which indicates the ID of the M3 mine, the ID of the borehole BH130, the first photo of that borehole and the Run number 3 of that photo.
+A RunId is defined based on the structure "mineName-boreholeName-photoNumber-runNumber". Note that "photoNumber" and "runNumber" for each borehole start from 1.<br />
+For example, a RunId can be M3-BH130-1-3, which indicates the ID of the M3 mine, the ID of the borehole BH130, the first image of that borehole, and the run number 3 of that image.
 
 
 ## 🔧 Metric <a name = "metric"></a>
 
-To evaluate the result of your work, the accuracy criterion is used in declaring the RQD group of each Run.
+The accuracy criterion is used to evaluate the result of your work in declaring the RQD group of each run.
 
 <div align="center">
 
-$$ accuracy=\tfrac{Number of RunIds}{Number  of  correctly  identified  RQD  groups} $$
+$$ Accuracy=\tfrac{Number of RunIds}{Number  of  correctly  identified  RQD  groups} $$
 </div>
 
-The result of this criterion on the test data is multiplied by 1000 and is considered as the score of this stage (the highest possible score of this stage is 1000 and the lowest possible score is zero).
+The result of this criterion on the test data is multiplied by 1000 and is considered as the score of this stage (the highest possible score of this stage is 1000, and the lowest possible score is zero).
 
 The judging of this question before the end of the competition will be based on only 30% of the test data. After the competition, 100% of the test data will be used for the final update of the scoreboard; This is done to avoid overfitting on the test data.
 
 ## 🚀 Prediction <a name = "prediction"></a>
 
-Put your model predictions on the test data (test-rqd folder photos) in a file called output.csv. This file should have two columns named RunId and Prediction respectively. In each row, put the Run ID in RunId and your prediction of the RQD group corresponding to that Run in the Prediction column (note that the CSV file must have a header). After preparing the output.csv file, upload it to us.
+Write your model predictions on the test dataset (test-rqd folder of test dataset samples) in a file called output.csv. This file should have two columns named RunId and Prediction respectively. In each row, put the RunId and your prediction of the RQD group corresponding to that run in the Prediction column (note that the CSV file must have a header). After preparing the output.csv file, upload it to us.
 
 
 ## ⛏️ My Solution <a name = "my_solution"></a>
-Since the competition is about object detection, so I have used Faster R-CNN architucture, which can accurately and quickly predict the locations of different objects. Also, there is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
+Since the competition is about object detection, so I have used Faster R-CNN architucture, which can accurately and quickly predict the locations of different objects. Also, A [notebook](notebooks/notebook.ipynb) file is available for use on Google Colab.
 Two separate Faster R-CNN models are used to identify rocks and woods. The following settings have also been used for modeling: <br />
-- **Hyperparameter**: I used hyperOpt to optimize the these parameters, Lrearning rate, momentum, weight_decay, and batch size.
+
+- **Hyperparameter**: I used hyperOpt to optimize these parameters, Learning rate, momentum, weight_decay, and batch size.
 These are my space for both models:
 
 ```
@@ -185,7 +181,7 @@ wood_model_hyperparameters: {'batch_size' : 8, 'lr': 0.006039497039954175, 'mome
 ```
 
 - **Early Stopping**: with  ```patience=4``` and  ```min_delta=0.01```
-- **Dataset**: I used ```15%``` of dataset for valid and ```85%``` for train, and there are ```156``` samples.
+- **Dataset**: I used ```15%``` of dataset for validation and ```85%``` for training, and there are ```156``` samples.
 - **Augmentation and Transforms**: following transforms and augmentations are used.
 
 ```
@@ -197,7 +193,7 @@ tranform_rock = transforms.Compose([transforms.Normalize(mean=[0.485, 0.456, 0.4
 tranform_wood = []
 
 ```
-- **Learning**: I used epoch=40 with early stoping. Learning curve of both models are depicted follow.
+- **Learning**: I used epoch=40 with early stoping. The learning curves of both models are shown below:.
 
 <div align="center">
 
@@ -208,81 +204,85 @@ tranform_wood = []
 <em>the rock model</em>|<em>the wood model</em>
 </div>
 
-- **Prediction**: I applied wood and rock models on a sample from vali set and results are as follow:
+- **Prediction**: I applied the wood and rock models to a sample from the validation dataset, and the output is shown below:
 
 <div align="center">
 
-<em>a valid sample of rock model</em>
+<em>Output of the rock model applied to a sample of validation dataset</em>
 
 !["rock_model_sample_pred"](docs/rock_model_sample_pred.png) | !["rock_model_sample_org"](docs/rock_model_sample_org.png)
 :-------: | :-------:
-<em>predicted</em>|<em>original sample</em>
+<em>Predicted Bounding Boxes</em>|<em>Target Bounding Boxes</em>
 </div>
 
 
 <div align="center">
 
-<em>a valid sample of wood model</em>
+<em>Output of the wood model applied to a sample of validation dataset</em>
 
 !["wood_model_sample_pred"](docs/wood_model_sample_pred.png) | !["wood_model_sample_org"](docs/wood_model_sample_org.png)
 :-------: | :-------:
-<em>predicted</em>|<em>original sample</em>
+<em>Predicted Bounding Boxes</em>|<em>Target Bounding Boxes</em>
 </div>
 
 ## 🎈 How to Use <a name = "how_to_use"></a>
 
-These instructions will get you a copy of the project up and running on Colab machines. Also, there is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
+These instructions will help you get a copy of the project up and running on Google Colab. Also, A [notebook](notebooks/notebook.ipynb) file is available for use on Google Colab.
 
-### 🎈 Requirements 
+### 🎈 Clone the Project
 
-You can use requirements.txt file to install all project dependencies.
+You should clone project and change cwd to the project directory.
 
 ```
-!pip install -r requirements.txt
+!git clone https://github.com/BAfsharmanesh/quera_mine_problem.git
+%cd /content/quera_mine_problem
 ```
 
 ### 🎈 Dataset
 
-you can use following instructions to make a copy of dataset from original dataset.
+You can use following instructions to make a copy of dataset from original dataset.
 
-- copy dataset to you google drive from following link:
+- Copy dataset to you google drive from following link:
 
 ```
 https://drive.google.com/file/d/1fSzUMCJHx3JHwrDpY_Qz6KI1zIUv3BnC/edit
 ```
 
-- using following command to make a copy to Colab
+- You can make a copy of the dataset from Google Drive to Colab using following command.
 
 ```
 from google.colab import drive
 from google.colab import files
 drive.mount('/content/drive')
 
-!cp /content/drive/MyDrive/data.zip /content/data.zip
-!unzip -qq /content/data.zip -d /content/data/
-!rm /content/data.zip
+!cp /content/drive/MyDrive/data.zip data/data.zip
+!unzip -qq data/data.zip -d data/
+!rm data/data.zip
 ```
 
 ### 🎈 Load data and Split valid-train dataset
 
 ```
-from dataset import Dataset_from_memory, valid_train_split
+from src.dataset import Dataset_from_memory, valid_train_split
+from src.utils import img_tensor_load
+import pandas as pd
+import os
+import torchvision.transforms as transforms
 ```
 
 ```
-data_path = '/content/data/'
-img_path = data_path+'train/'
+img_path = 'data/train/'
+label_path = 'data/label.xlsx'
+
 dir_name = sorted(os.listdir(img_path))
 
-labels = pd.read_excel(data_path+'label.xlsx')
+labels = pd.read_excel(label_path)
 
 df2 = pd.DataFrame(data=[file_nm.split('.')[0].split('-') for file_nm in dir_name], columns=['Mine', 'Borehole', 'Box_num'])
 df2['File'] = dir_name
 
 
 all_img_tensor = img_tensor_load(img_path, df2, transform=transforms.Resize((300,400)))
-train_indx, valid_indx = valid_train_split(sample_len=len(targets_dict_list), valid_percent=15)
-
 
 targets_dict_list = []
 for i in range(len(all_img_tensor)):
@@ -291,12 +291,14 @@ for i in range(len(all_img_tensor)):
     d['boxes'] = boxes_img
     d['labels'] = labels_img
     targets_dict_list.append(d)
+
+train_indx, valid_indx = valid_train_split(sample_len=len(targets_dict_list), valid_percent=15)
 ```
 
 ### 🎈 Hyperparameter Optimization
 
 ```
-from hyperparameters import hyperopt_fmin
+from src.hyperparameters import hyperopt_fmin
 ```
 - rock hyperparameter optimization 
 ```
@@ -316,7 +318,7 @@ best_hyperparams, trials = hyperopt_fmin(inputData)
 ### 🎈 Train
 
 ```
-from train import train_valid_setup, training_plot
+from src.train import train_valid_setup, training_plot
 ```
 
 - rock model
@@ -358,21 +360,21 @@ training_plot(train_loss_rock, valid_loss_rock)
 training_plot(train_loss_wood, valid_loss_wood)
 ```
 
-- copy models to google drive
+- copy models to the Google drive
 
 ```
-!cp /content/checkPoint_rock_model.pth /content/drive/MyDrive
-!cp /content/checkPoint_wood_model.pth /content/drive/MyDrive
+!cp /content/quera_mine_problem/models/checkPoint_rock_model.pth /content/drive/MyDrive
+!cp /content/quera_mine_problem/models/checkPoint_wood_model.pth /content/drive/MyDrive
 
 ```
 
-### 🎈 Inference on valid dataset
+### 🎈 Inference on validation dataset
 
 
 ```
-from utils import load_weights_fun, imgs_with_boxes, show
-from model import model_select
-from train import img_transform
+from src.utils import load_weights_fun, imgs_with_boxes, show
+from src.model import model_select
+from src.train import img_transform
 from torchvision.transforms.functional import convert_image_dtype
 ```
 
@@ -382,7 +384,7 @@ model_rock, optimizer_rock, device = model_select(lr=0.008388406010734754,
                                           momentum=0.9444939643124248, 
                                           weight_decay=0.007445852010334835, 
                                         num_classes=2)
-load_weights_fun('/content/drive/MyDrive/checkPoint_rock_model.pth', model_rock, optimizer_rock)
+load_weights_fun('/content/quera_mine_problem/models/checkPoint_rock_model.pth', model_rock, optimizer_rock)
 
 img_rock = img_transform()(convert_image_dtype(all_img_tensor[valid_indx], dtype=torch.float32))
 
@@ -394,7 +396,7 @@ model_wood, optimizer_wood, device = model_select(lr=0.006039497039954175,
                                         momentum=0.9708223564790668, 
                                         weight_decay=0.0014905031197396778, 
                                         num_classes=2)
-load_weights_fun('/content/drive/MyDrive/checkPoint_wood_model.pth', model_wood, optimizer_wood)
+load_weights_fun('/content/quera_mine_problem/models/checkPoint_wood_model.pth', model_wood, optimizer_wood)
 
 img_wood = img_transform()(convert_image_dtype(all_img_tensor[valid_indx], dtype=torch.float32))
 
@@ -430,31 +432,33 @@ show(imgs_with_boxes_pred_wood[sample_num])
 show(imgs_with_boxes_true_wood[sample_num])
 ```
 
-### 🎈 Inference on test dataset, Submision
+### 🎈 Inference on test dataset, Submission
 
 - import modules
 ```
-from postprocessing import inference_test_data, calculate_sub
+from src.postprocessing import inference_test_data, calculate_sub
 
 ```
 
 - load data
 
 ```
+img_test_path = 'data/test-rqd/'
+run_depth_path = 'data/from-to-rqd.xlsx'
+
 # Detect devices
 use_cuda = torch.cuda.is_available()                   # check if GPU exists
 device = torch.device("cuda" if use_cuda else "cpu")   # use CPU or GPU
 print(device)
 
-data_path_test = '/content/data/test-rqd/'
-dir_name_test = sorted(os.listdir(data_path_test))
+dir_name_test = sorted(os.listdir(img_test_path))
 
 df2_test = pd.DataFrame(data=[file_nm.split('.')[0].split('-') for file_nm in dir_name_test], columns=['Mine', 'Borehole', 'Box_num'])
 df2_test['File'] = dir_name_test
 
-all_img_tensor_test = img_tensor_load(data_path_test, df2_test, transform=transforms.Resize((300,400)))
+all_img_tensor_test = img_tensor_load(img_test_path, df2_test, transform=transforms.Resize((300,400)))
 
-df = pd.read_excel(data_path+'from-to-rqd.xlsx')
+df = pd.read_excel(run_depth_path)
 df['File'] = ['-'.join(i.split('-')[:-1])+'.jpg' for i in df.RunId]
 ```
 - make prediction
@@ -482,7 +486,7 @@ img_with_boxes_pred = imgs_with_boxes(all_img_tensor_test,
 show(img_with_boxes_pred[sample_num])
 ```                                                                                               
 
-- create submision.csv
+- create output.csv
 
 ```
 runs_dep_dict = df.groupby('File').apply(lambda g: list(100*(g['to'] - g['from']).values) ).to_dict()
@@ -495,10 +499,10 @@ sub = calculate_sub(output_rock_list, output_wood_list, runs_dep_list, df2_test,
 ## ✍️ Project Structure <a name = "project_structure"></a>
 ```
 ├──  data  
-│    └── datasets  - here's the datasets folder that is responsible for all data handling.
-│    └── transforms  - here's the data preprocess folder that is responsible for all data augmentation.
-│    └── build.py  		   - here's the file to make dataloader.
-│    └── collate_batch.py   - here's the file that is responsible for merges a list of samples to form a mini-batch.
+│    └── test-rqd            - here's the datasets folder for test.
+│    └── train               - here's the datasets folder for train.
+│    └── from-to-rqd.xlsx    - here's the file to calculated depth of each run.
+│    └── label.xlsx          - here's the file that contains information of bounding boxes and labels.
 │
 │
 ├──  models
