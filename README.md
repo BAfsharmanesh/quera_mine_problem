@@ -30,7 +30,7 @@
 - [Prediction](#prediction)
 - [My Solution](my_solution)
 - [How to Use](how_to_use)
-- [My Solution](project_structure)
+- [Project Structure](project_structure)
 
 
 ## 🧐 About <a name = "about"></a>
@@ -262,7 +262,7 @@ You can use requirements.txt file to install all project dependencies.
 
 you can use following instructions to make a copy of dataset from original dataset.
 
-- copy dataset to you google drive from following liks
+- copy dataset to you google drive from following link:
 
 ```
 https://drive.google.com/file/d/1fSzUMCJHx3JHwrDpY_Qz6KI1zIUv3BnC/edit
