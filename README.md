@@ -96,7 +96,7 @@ For example, in the figure below for the first Run of this box, there are only t
 
 <div align="center">
 
-$$ RQD=100\times \tfrac{0.2}{2.5}= \%8 $$
+$$ RQD=100\times \tfrac{0.2}{2.5}=\%8 $$
 </div>
 
 <img
