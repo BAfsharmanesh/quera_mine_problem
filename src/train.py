@@ -152,12 +152,14 @@ def train_valid_setup(lr,
     modelTypeName = modelType['name']
 
     conf_params = {'drop_last':True, 'batch_size': batch_size, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'collate_fn':collate_fn}
-    train_set =   Dataset_from_memory([targets_dict_list[i] for i in train_indx], all_img_tensor[train_indx,:,:,:],
+    train_set =   Dataset_from_memory(all_img_tensor[train_indx,:,:,:],
+                                        [targets_dict_list[i] for i in train_indx],
                                         transform=img_transform() if modelType['imgT'] else None,
                                         imgBoxTransform=RandomHorizontalFlip(0.5),
                                         train=True)
     train_loader = data.DataLoader(train_set, **conf_params)
-    valid_set =   Dataset_from_memory([targets_dict_list[i] for i in valid_indx], all_img_tensor[valid_indx,:,:,:], 
+    valid_set =   Dataset_from_memory(all_img_tensor[valid_indx,:,:,:],  
+                                        [targets_dict_list[i] for i in valid_indx], 
                                         transform=img_transform() if modelType['imgT'] else None,
                                         imgBoxTransform=None,
                                         train=True)
