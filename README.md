@@ -45,21 +45,6 @@ The competition is about calculating the length of rocks in a  mineral explorati
 </div>
 
 
-<!-- <center>
-
- Contest | Date | Scoreboard 
-:-------:|:-------:|:----:
- [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
-
-</center> -->
-
-
-
-
-
-
-
-
 Below is the description of the contest organizer about the dataset and metric:
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -82,7 +67,7 @@ Also, in the figure below, the given parameters for an identified object are sho
 
 These objects for the photos in the train folder are labeled for you in the label.xlsx file with the following specifications:
 
-<center>
+<div align="center">
 
 Column name       | Description 
 :----------------- | :-----------------:
@@ -94,9 +79,7 @@ width   | Length of object rectangle (in x axis)
 height   | Height of object rectangle (on y axis) 
 image_width   | Image width in pixels 
 image_height   | Image height in pixels 
-
-</center>
-
+</div>
 
 Each Run is separated by woods placed vertically in the core box.<br />
 
@@ -111,12 +94,10 @@ The Rock Quality Designation, abbreviated as RQD, is an approximate measure to d
 
 For example, in the figure below for the first Run of this box, there are only two stones larger than 10 cm that are marked in the figure (the first row of cores), and the wood marking the end of the Run is also shown. Run number one starts from the first row of the box (left side) and continues to the first stick of the same row. Given that the length of this run is 2.5 meters and the total length of the labeled stones is 0.2 meters. Its RQD value is 8% according to the following calculations:
 
-<center>
+<div align="center">
 
 $ RQD=100\times \tfrac{0.2}{2.5}= \%8 $
-
-</center>
-
+</div>
 
 <img
   src="docs\rqd-example.png"
@@ -126,7 +107,7 @@ $ RQD=100\times \tfrac{0.2}{2.5}= \%8 $
 
 According to Chapter 8 of Mineral Exploration Book, the RQD group for a Run is calculated according to the following table:
 
-<center>
+<div align="center">
 
 RQD percent range | class 
 :-----------------: | :-----:
@@ -135,8 +116,7 @@ RQD percent range | class
 [50,75)	  | 3 
 [75,90)    | 4 
 [90,100)   | 5 
-
-</center>
+</div>
 
 For example, for the Run described above that had an RQD value of 8, the RQD group would be set to 1.
 
@@ -149,17 +129,14 @@ For this question, the training data is in the train folder and the test data is
 
 You should read the length of a Run from test-rqd data from the from-to-rqd.xlsx file and then calculate the RQD group of that Run. This Excel file has the following specifications:
 
-<center>
+<div align="center">
 
 Column name       | Description 
 :----------------- | :-----------------:
 RunId     |  ID of a Run
 From	  | the From value of that Run in meters
 To	  |  The To value of that Run in meters
-
-</center>
-
- 
+</div>
 
 A RunId is defined based on the structure "Run Number-Photo Number-Specific Name-Miner Name". Note that the "Photo number" for each borehole starts from 1 and also the "Run number" for each photo starts from 1. 
 
@@ -170,11 +147,10 @@ For example, a RunId can be M3-BH130-1-3, which indicates the ID of the M3 mine,
 
 To evaluate the result of your work, the accuracy criterion is used in declaring the RQD group of each Run.
 
-<center>
+<div align="center">
 
 $ accuracy=\tfrac{Number of RunIds}{Number  of  correctly  identified  RQD  groups} $
-
-</center>
+</div>
 
 The result of this criterion on the test data is multiplied by 1000 and is considered as the score of this stage (the highest possible score of this stage is 1000 and the lowest possible score is zero).
 
@@ -222,37 +198,35 @@ tranform_wood = []
 ```
 - **Learning**: I used epoch=40 with early stoping. Learning curve of both models are depicted follow.
 
-<center>
+<div align="center">
 
 <em>training curve</em>
 
 !["training_curve_rock_model"](docs/training_curve_rock_model.png) | !["training_curve_wood_model"](docs/training_curve_wood_model.png)
 :-------: | :-------:
 <em>the rock model</em>|<em>the wood model</em>
-
-</center>
+</div>
 
 - **Prediction**: I applied wood and rock models on a sample from vali set and results are as follow:
 
-<center>
+<div align="center">
 
 <em>a valid sample of rock model</em>
 
 !["rock_model_sample_pred"](docs/rock_model_sample_pred.png) | !["rock_model_sample_org"](docs/rock_model_sample_org.png)
 :-------: | :-------:
 <em>predicted</em>|<em>original sample</em>
+</div>
 
-</center>
 
-<center>
+<div align="center">
 
 <em>a valid sample of wood model</em>
 
 !["wood_model_sample_pred"](docs/wood_model_sample_pred.png) | !["wood_model_sample_org"](docs/wood_model_sample_org.png)
 :-------: | :-------:
 <em>predicted</em>|<em>original sample</em>
-
-</center>
+</div>
 
 ## 🎈 How to Use <a name = "how_to_use"></a>
 
