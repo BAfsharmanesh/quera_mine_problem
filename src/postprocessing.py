@@ -1,14 +1,15 @@
 import itertools
-import torch
-from tqdm.auto import tqdm
-import torchvision
-from torch.utils import data
-import numpy as np
 
-from dataset import img_transform
-from utils import load_weights_fun
-from model import model_select
-from dataset import Dataset_from_memory
+import numpy as np
+from tqdm.auto import tqdm
+import torch
+from torch.utils import data
+import torchvision
+
+from src.dataset import img_transform
+from src.utils import load_weights_fun
+from src.model import model_select
+from src.dataset import Dataset_from_memory
 
 
 def validation_fun(models, data_loader, device):

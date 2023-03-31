@@ -1,38 +1,11 @@
+import random
+
+import numpy as np
+import torch
 from torch.utils import data
 from torchvision.transforms.functional import convert_image_dtype
 import torchvision.transforms as transforms
-import torch
-import random
-import numpy as np
 
-
-# class Dataset_from_memory(data.Dataset):
-#     "Characterizes a dataset for PyTorch"
-#     def __init__(self, targets_dict_list, all_img_tensor, transform=None, imgBoxTransform=None):
-#         super(Dataset_from_memory, self).__init__()
-#         "Initialization"
-#         self.targets_dict_list = targets_dict_list
-#         self.all_img_tensor = all_img_tensor
-#         self.transform = transform
-#         self.imgBoxTransform = imgBoxTransform
-
-#     def __len__(self):
-#         "Denotes the total number of samples"
-#         return len(self.all_img_tensor)
-
-#     def __getitem__(self, index):
-#         "Generates one sample of data"
-#         # Load data
-#         X = self.all_img_tensor[index]
-#         X = convert_image_dtype(X, dtype=torch.float32)
-#         y = self.targets_dict_list[index]     # (input) spatial images
-
-#         if self.transform is not None:
-#           X = self.transform(X)
-
-#         if self.imgBoxTransform is not None:
-#           X, y = self.imgBoxTransform(X, y)
-#         return X, y
 
 class Dataset_from_memory(data.Dataset):
     "Characterizes a dataset for PyTorch"

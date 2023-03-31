@@ -1,23 +1,21 @@
 import math
 import sys
 import os
-
 from typing import Tuple, List, Dict, Optional
+from collections import OrderedDict
+
+import numpy as np
+from matplotlib import pyplot as plt
+from tqdm.auto import tqdm
 import torch
 from torch import Tensor
-from collections import OrderedDict
+from torch.utils import data
 from torchvision.models.detection.roi_heads import fastrcnn_loss
 from torchvision.models.detection.rpn import concat_box_prediction_layers
 
-from matplotlib import pyplot as plt
-import numpy as np
-
-from dataset import Dataset_from_memory, RandomHorizontalFlip, img_transform
-from torch.utils import data
-from model import model_select
-from utils import collate_fn
-from tqdm.auto import tqdm
-
+from src.dataset import Dataset_from_memory, RandomHorizontalFlip, img_transform
+from src.model import model_select
+from src.utils import collate_fn
 
 
 def train_one_epoch(model, 
@@ -185,7 +183,7 @@ def train_valid_setup(lr,
                         'valid_loss': valid_loss,
                         'R_CNN': model.state_dict(),
                         'optimizer': optimizer.state_dict(),
-                        }, os.path.join(f'checkPoint_{modelTypeName}_model.pth'))
+                        }, 'models/'+os.path.join(f'checkPoint_{modelTypeName}_model.pth'))
             print(f'model of epoch {epoch+1} saved')
         
         if early_stopper.early_stop(valid_loss):             
