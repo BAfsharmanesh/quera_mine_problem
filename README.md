@@ -28,14 +28,23 @@
 - [Dataset](#dataset)
 - [Metric](#metric)
 - [Prediction](#prediction)
-- [My Solution](my_solution)
-- [How to Use](how_to_use)
-- [Project Structure](project_structure)
+- [My Solution](#my_solution)
+- [How to Use](#how_to_use)
+- [Project Structure](#project_structure)
 
 
 ## 🧐 About <a name = "about"></a>
 
 The competition is about calculating the length of rocks in a  mineral exploration process. 
+
+<p align="center">
+
+ Contest | Date | Scoreboard 
+:-------:|:-------:|:----:
+ [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
+
+</p>
+
 
 <center>
 
@@ -230,7 +239,7 @@ tranform_wood = []
 
 <em>a valid sample of rock model</em>
 
-!["rock_model_sample_pred"](docs\rock_model_sample_pred.png) | !["rock_model_sample_org"](docs\rock_model_sample_org.png)
+!["rock_model_sample_pred"](docs/rock_model_sample_pred.png) | !["rock_model_sample_org"](docs/rock_model_sample_org.png)
 :-------: | :-------:
 <em>predicted</em>|<em>original sample</em>
 
@@ -240,7 +249,7 @@ tranform_wood = []
 
 <em>a valid sample of wood model</em>
 
-!["wood_model_sample_pred"](docs\wood_model_sample_pred.png) | !["wood_model_sample_org"](docs\wood_model_sample_org.png)
+!["wood_model_sample_pred"](docs/wood_model_sample_pred.png) | !["wood_model_sample_org"](docs/wood_model_sample_org.png)
 :-------: | :-------:
 <em>predicted</em>|<em>original sample</em>
 
@@ -509,7 +518,7 @@ sub = calculate_sub(output_rock_list, output_wood_list, runs_dep_list, df2_test,
 ```
 
 
-# ✍️ Project Structure <a name = "project_structure"></a>
+## ✍️ Project Structure <a name = "project_structure"></a>
 ```
 ├──  data  
 │    └── datasets  - here's the datasets folder that is responsible for all data handling.
