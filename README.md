@@ -228,6 +228,7 @@ tranform_wood = []
 ## 🎈 How to Use <a name = "how_to_use"></a>
 
 These instructions will help you get a copy of the project up and running on Google Colab. Also, A [notebook](notebooks/notebook.ipynb) file is available for use on Google Colab.
+The project works with ```python 3.9.16``` and packages with version specified in the ```requirements.txt```
 
 ### 🎈 Clone the Project
 

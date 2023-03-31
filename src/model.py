@@ -1,6 +1,7 @@
 import torch
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights, faster_rcnn
 from torchvision.models import ResNet50_Weights
+
 from src.utils import seed_everything
 
 
