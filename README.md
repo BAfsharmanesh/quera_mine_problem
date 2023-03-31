@@ -149,7 +149,7 @@ To evaluate the result of your work, the accuracy criterion is used in declaring
 
 <div align="center">
 
-$ accuracy=\tfrac{Number of RunIds}{Number  of  correctly  identified  RQD  groups} $
+$$ accuracy=\tfrac{Number of RunIds}{Number  of  correctly  identified  RQD  groups} $$
 </div>
 
 The result of this criterion on the test data is multiplied by 1000 and is considered as the score of this stage (the highest possible score of this stage is 1000 and the lowest possible score is zero).
