@@ -218,7 +218,7 @@ tranform_wood = []
 
 <em>training curve</em>
 
-!["training_curve_rock_model"](docs\training_curve_rock_model.png) | !["training_curve_wood_model"](docs\training_curve_wood_model.png)
+!["training_curve_rock_model"](docs/training_curve_rock_model.png) | !["training_curve_wood_model"](docs/training_curve_wood_model.png)
 :-------: | :-------:
 <em>the rock model</em>|<em>the wood model</em>
 
