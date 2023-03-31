@@ -44,7 +44,7 @@ The competition is about calculating the length of rocks in a  mineral explorati
  [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
 </div>
 
-
+There is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
 Below is the description of the contest organizer about the dataset and metric:
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -96,7 +96,7 @@ For example, in the figure below for the first Run of this box, there are only t
 
 <div align="center">
 
-$$ RQD=100\times \tfrac{0.2}{2.5}=\\%8 $$
+$$ RQD=100\times \tfrac{0.2}{2.5}=8\\% $$
 </div>
 
 <img
@@ -162,7 +162,8 @@ Put your model predictions on the test data (test-rqd folder photos) in a file c
 
 
 ## ⛏️ My Solution <a name = "my_solution"></a>
-Since the competition is about object detection, so I have used Faster R-CNN architucture, which can accurately and quickly predict the locations of different objects. Two separate Faster R-CNN models are used to identify rocks and woods. The following settings have also been used for modeling: <br />
+Since the competition is about object detection, so I have used Faster R-CNN architucture, which can accurately and quickly predict the locations of different objects. Also, there is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
+Two separate Faster R-CNN models are used to identify rocks and woods. The following settings have also been used for modeling: <br />
 - **Hyperparameter**: I used hyperOpt to optimize the these parameters, Lrearning rate, momentum, weight_decay, and batch size.
 These are my space for both models:
 
@@ -230,7 +231,7 @@ tranform_wood = []
 
 ## 🎈 How to Use <a name = "how_to_use"></a>
 
-These instructions will get you a copy of the project up and running on Colab machines.
+These instructions will get you a copy of the project up and running on Colab machines. Also, there is a [notebook](notebooks/notebook.ipynb) file that is ready to use.
 
 ### 🎈 Requirements 
 
