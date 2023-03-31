@@ -37,22 +37,21 @@
 
 The competition is about calculating the length of rocks in a  mineral exploration process. 
 
-<p align="center">
+<div align="center">
+
+ Contest | Date | Scoreboard 
+:-------:|:-------:|:----:
+ [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
+</div>
+
+
+<!-- <center>
 
  Contest | Date | Scoreboard 
 :-------:|:-------:|:----:
  [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
 
-</p>
-
-
-<center>
-
- Contest | Date | Scoreboard 
-:-------:|:-------:|:----:
- [**Mine Problem**](https://quera.ir/contest/assignments/31720/problems) | August 24, 2021 | 18/150 [Link](https://quera.ir/contest/assignments/31720/scoreboard)
-
-</center>
+</center> -->
 
 
 
