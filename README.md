@@ -163,7 +163,7 @@ Two separate Faster R-CNN models are used to identify rocks and woods. The follo
 - **Hyperparameter**: I used hyperOpt to optimize these parameters, Learning rate, momentum, weight_decay, and batch size.
 These are my space for both models:
 
-```
+```python
 space={'lr' : hp.uniform('lr', 0,0.01),
         'momentum' : hp.uniform('momentum', 0.85,0.99),
         'weight_decay': hp.uniform('weight_decay', 0,0.01),
@@ -173,7 +173,7 @@ space={'lr' : hp.uniform('lr', 0,0.01),
 
 and optimized solutions: 
 
-```
+```python
 rock_model_hyperparameters: {'batch_size' : 8, 'lr': 0.008388406010734754, 'momentum': 0.9444939643124248, 'weight_decay': 0.007445852010334835}
 
 wood_model_hyperparameters: {'batch_size' : 8, 'lr': 0.006039497039954175, 'momentum': 0.9708223564790668, 'weight_decay': 0.0014905031197396778}
@@ -184,7 +184,7 @@ wood_model_hyperparameters: {'batch_size' : 8, 'lr': 0.006039497039954175, 'mome
 - **Dataset**: I used ```15%``` of dataset for validation and ```85%``` for training, and there are ```156``` samples.
 - **Augmentation and Transforms**: following transforms and augmentations are used.
 
-```
+```python
 both_models_augmentation: RandomHorizontalFlip(0.5)
 
 tranform_rock = transforms.Compose([transforms.Normalize(mean=[0.485, 0.456, 0.406],std=[0.229, 0.224, 0.225]),
